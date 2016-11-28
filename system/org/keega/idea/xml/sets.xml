@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+set里面的name代表信息集合的名称，set里面的flag：01表示自由员工才能显示，02表示人事才能显示。
+field里面的name代表字段名，fieldCode表示代码项，flag：01表示显示，02表示不显示，03表示只有审核的时候才显示。
+required：true表示必填项，false表示非必填。isEdit：true表示可以编辑，false表示不可编辑。
+-->
+<sets>
+    <!-- 普通员工set 里面的flag='01' 这里开始 -->
+    <set name="A01" desc="基本信息" flag="01">
+        <field name="B0110" dataType="代码型" fieldCode="UN" flag="03" isEdit="true"  required="true">单位名称</field>
+        <field name="E0122" dataType="代码型" fieldCode="UM" flag="03"  isEdit="true" required="true">部门</field>
+        <field name="E01A1" dataType="代码型" fieldCode="@K" flag="03" isEdit="true" required="true">岗位名称</field>
+        <field name="H01TG" dataType="字符型" fieldCode="" flag="03" isEdit="true" required="true">直接上级名字</field>
+
+        <field name="A0101" dataType="字符型" fieldCode="" flag="01" isEdit="true" required="true">姓名</field>
+        <field name="A0151" dataType="字符型" fieldCode="" flag="03"  isEdit="true" required="true">连续工龄</field>
+        <field name="A0104" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">曾用名</field>
+        <field name="A0107" dataType="代码型" fieldCode="AX" flag="01"  isEdit="true" required="true">性别</field>
+        <field name="C0101" dataType="数值型" fieldCode="" flag="01"  isEdit="false" required="true">年龄</field>
+        <field name="A0121" dataType="代码型" fieldCode="AE" flag="01"  isEdit="true" required="true">民族</field>
+        <field name="H0203" dataType="代码型" fieldCode="AT" flag="01"  isEdit="true" required="true">政治面貌</field>
+        <field name="A0124" dataType="代码型" fieldCode="BF" flag="01"  isEdit="true" required="true">健康状况</field>
+        <field name="A0127" dataType="代码型" fieldCode="BG" flag="01"  isEdit="true" required="true">婚姻状况</field>
+        <field name="C01SB" dataType="数值型" fieldCode="" flag="01"  isEdit="true" required="true">身高（ＣＭ）</field>
+        <field name="C0109" dataType="代码型" fieldCode="DI" flag="01"  isEdit="true" required="true">血型</field>
+        <field name="C0104" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">移动电话</field>
+        <field name="H01T2" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">办公室电话</field>
+        <field name="A0177" dataType="字符型" fieldCode="" flag="01"  isEdit="false" required="true">身份证号</field>
+        <field name="C01SJ" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">身份证地址</field>
+        <field name="H01SL" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">现住地址</field>
+        <field name="A0171" dataType="代码型" fieldCode="AB" flag="01"  isEdit="true" required="true">户口所在地</field>
+        <field name="A0174" dataType="代码型" fieldCode="HP" flag="01"  isEdit="true" required="true">户口性质</field>
+        <field name="C01RT" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">户口所在派出所</field>
+        <field name="A0114" dataType="代码型" fieldCode="AB" flag="01"  isEdit="true" required="true">籍贯</field>
+        <field name="H01SP" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">档案关系所在地</field>
+        <field name="A0141" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">参加工作时间</field>
+        <field name="E0108" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">进入集团时间</field>
+        <field name="C0183" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">到本单位时间</field>
+        <!--<field name="E0108" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">进入时间</field>-->
+        <field name="H01TQ" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">护照</field>
+        <field name="C01SL" dataType="代码型" fieldCode="YY" flag="01"  isEdit="true" required="false">持有何种驾照</field>
+        <field name="H01SJ" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">爱好</field>
+    </set>
+    <set name="A04" desc="学历信息★" flag="01">
+        <field name="" dataType="字符型" fieldCode="" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A0435" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">毕业学校</field>
+        <!--<field name="A0410" dataType="代码型" fieldCode="AI" flag="01"  isEdit="true" required="true">所学专业</field>-->
+        <field name="A0444" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">所学专业</field>
+        <field name="A0430" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">毕业时间</field>
+        <field name="C0401" dataType="代码型" fieldCode="KF" flag="01"  isEdit="true" required="true">学历性质</field>
+        <field name="A0405" dataType="代码型" fieldCode="YT" flag="01"  isEdit="true" required="true">学历</field>
+        <field name="A0440" dataType="代码型" fieldCode="AN" flag="01"  isEdit="true" required="true">学位</field>
+    </set>
+    <set name="A19" desc="外部工作经历★" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A1905" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">起始时间</field>
+        <field name="A1910" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">终止时间</field>
+        <field name="A1915" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">工作单位</field>
+        <field name="A1920" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">担任职务</field>
+        <field name="A1925" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">证明人</field>
+        <field name="A1926" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">离职原因</field>
+    </set>
+    <set name="A79" desc="家庭情况" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A7905" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">成员姓名</field>
+        <field name="A7910" dataType="代码型" fieldCode="AS" flag="01"  isEdit="true" required="true">与本人关系</field>
+        <field name="A7926" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">电话号码</field>
+        <field name="A7927" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">住址</field>
+    </set>
+    <set name="AD3" desc="紧急联系人" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="CD301" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">紧急联系人姓名</field>
+        <field name="CD302" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">紧急联系人电话</field>
+        <field name="CD303" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">紧急联系人地址</field>
+    </set>
+    <set name="A34" desc="语言能力" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="C3404" dataType="代码型" fieldCode="ZO" flag="01"  isEdit="true" required="true">语种</field>
+        <field name="C35A0" dataType="代码型" fieldCode="YL" flag="01"  isEdit="true" required="true">熟练程度</field>
+        <field name="C3402" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">证书名称</field>
+        <!--<field name="C3403" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">获证日期</field>-->
+    </set>
+    <set name="AZ7" desc="职业资格" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="CZ701" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">职业资格名称</field>
+        <field name="CZ702" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">获得时间</field>
+        <field name="CZ703" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">证书号</field>
+        <field name="CZ704" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">颁发机构</field>
+    </set>
+    <set name="A10" desc="专业技术职称" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A1005" dataType="代码型" fieldCode="AJ" flag="01"  isEdit="true" required="true">专业技术资格名称</field>
+        <field name="C1005" dataType="代码型" fieldCode="QC" flag="01"  isEdit="true" required="true">职称等级</field>
+        <field name="A1015" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">取得资格时间</field>
+        <field name="A1010" dataType="代码型" fieldCode="BY" flag="01"  isEdit="true" required="true">取得资格途径 </field>
+    </set>
+    <set name="A37" desc="培训经历" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="H3702" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">培训机构</field>
+        <field name="A3715" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">培训开始时间</field>
+        <field name="A3720" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">培训结束时间</field>
+        <field name="A3730" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">培训内容</field>
+        <field name="H3703" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">获得证书</field>
+    </set>
+    <set name="A28" desc="奖励信息" flag="01">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="E2807" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">奖励时间</field>
+        <field name="E2811" dataType="代码型" fieldCode="MI" flag="01"  isEdit="true" required="true">奖励级别</field>
+        <field name="E2803" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">奖励名称</field>
+        <field name="E2805" dataType="代码型" fieldCode="HQ" flag="01"  isEdit="true" required="true">奖励原因</field>
+        <field name="E2809" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">奖励批准单位</field>
+    </set>
+
+    <!-- 普通员工set 里面的flag='01' 这里结束 -->
+
+
+    <!-- 人事set 里面的flag='02' 这里开始 -->
+
+    <set name="A01" desc="基本信息" flag="02">
+        <field name="E0108" dataType="日期型" fieldCode="" isEdit="true" flag="01" required="true">进入时间</field>
+        <field name="C0183" dataType="日期型" fieldCode="" isEdit="true" flag="01" required="true">到本单位时间</field>
+        <field name="H01TI" dataType="代码型" fieldCode="ZV" isEdit="true" flag="01" required="true">工资发放单位</field>
+        <field name="H01T3" dataType="代码型" fieldCode="ZV" isEdit="true" flag="01" required="true">保险缴费地点</field>
+        <field name="H01T4" dataType="代码型" fieldCode="ZV" isEdit="true" flag="01" required="true">公积金缴费地点</field>
+        <field name="H01TK" dataType="代码型" fieldCode="YR" isEdit="true" flag="01" required="true">工作城市</field>
+        <field name="H01SX" dataType="代码型" fieldCode="YS" isEdit="true" flag="01" required="true">是否转正</field>
+
+        <field name="B0110" dataType="代码型" fieldCode="UN" isEdit="true" flag="01" required="true">单位名称</field>
+        <field name="E0122" dataType="代码型" fieldCode="UM" flag="01"  isEdit="true" required="true">部门</field>
+        <field name="E01A1" dataType="代码型" fieldCode="@K" flag="01" isEdit="true" required="true">岗位名称</field>
+        <field name="H01TG" dataType="字符型" fieldCode="" flag="01" isEdit="true" required="true">直接上级名字</field>
+
+        <field name="A0101" dataType="字符型" fieldCode="" flag="01" isEdit="true" required="true">姓名</field>
+        <field name="A0104" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">曾用名</field>
+        <field name="A0107" dataType="代码型" fieldCode="AX" flag="01"  isEdit="true" required="true">性别</field>
+        <field name="C0101" dataType="数值型" fieldCode="" flag="01"  isEdit="true" required="true">年龄</field>
+        <field name="A0121" dataType="代码型" fieldCode="AE" flag="01"  isEdit="true" required="true">民族</field>
+        <field name="H0203" dataType="代码型" fieldCode="AT" flag="01"  isEdit="true" required="true">政治面貌</field>
+        <field name="A0124" dataType="代码型" fieldCode="BF" flag="01"  isEdit="true" required="true">健康状况</field>
+        <field name="A0127" dataType="代码型" fieldCode="BG" flag="01"  isEdit="true" required="true">婚姻状况</field>
+        <field name="C01SB" dataType="数值型" fieldCode="" flag="01"  isEdit="true" required="true">身高（ＣＭ）</field>
+        <field name="C0109" dataType="代码型" fieldCode="DI" flag="01"  isEdit="true" required="true">血型</field>
+        <field name="C0104" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">移动电话</field>
+        <field name="H01T2" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">办公室电话</field>
+        <field name="C0102" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">电子信箱</field>
+        <field name="H01SU" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">自助账号</field>
+        <field name="A0177" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">身份证号</field>
+        <field name="C01SJ" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">身份证地址</field>
+        <field name="H01SL" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">现住地址</field>
+        <field name="A0171" dataType="代码型" fieldCode="AB" flag="01"  isEdit="true" required="true">户口所在地</field>
+        <field name="A0174" dataType="代码型" fieldCode="HP" flag="01"  isEdit="true" required="true">户口性质</field>
+        <field name="C01RT" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">户口所在派出所</field>
+        <field name="C01SF" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">目前所在地</field>
+        <field name="A0117" dataType="代码型" fieldCode="AB" flag="01"  isEdit="true" required="true">出生地</field>
+        <field name="A0114" dataType="代码型" fieldCode="AB" flag="01"  isEdit="true" required="true">籍贯</field>
+        <field name="A0111" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">出生日期</field>
+        <field name="H01SP" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">档案关系</field>
+        <field name="A0141" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">参加工作时间</field>
+        <field name="A0151" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">连续工龄</field>
+        <field name="E0108" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">进入集团时间</field>
+        <field name="C0183" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">到本单位时间</field>
+        <!--<field name="C0105" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">本企业工龄</field>-->
+        <field name="H01TQ" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">护照</field>
+        <field name="C01SL" dataType="代码型" fieldCode="YY" flag="01"  isEdit="true" required="false">持有何种驾照</field>
+        <field name="H01TV" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">配偶姓名</field>
+        <field name="H01TW" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">配偶身份证</field>
+        <field name="H01SJ" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">爱好</field>
+        <field name="H01SK" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="false">专长</field>
+    </set>
+    <set name="A04" desc="学历信息★" flag="02">
+        <field name="" dataType="字符型" fieldCode="" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A0435" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">毕业学校</field>
+        <!--<field name="A0410" dataType="代码型" fieldCode="AI" flag="01"  isEdit="true" required="true">所学专业</field>-->
+        <field name="A0444" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">所学专业</field>
+        <field name="A0430" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">毕业时间</field>
+        <field name="C0401" dataType="代码型" fieldCode="KF" flag="01"  isEdit="true" required="true">学历性质</field>
+        <field name="A0405" dataType="代码型" fieldCode="YT" flag="01"  isEdit="true" required="true">学历</field>
+        <field name="A0440" dataType="代码型" fieldCode="AN" flag="01"  isEdit="true" required="true">学位</field>
+    </set>
+    <set name="A19" desc="外部工作经历★" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A1905" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">起始时间</field>
+        <field name="A1910" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">终止时间</field>
+        <field name="A1915" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">工作单位</field>
+        <field name="A1920" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">担任职务</field>
+        <field name="A1925" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">证明人</field>
+        <field name="A1926" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">离职原因</field>
+    </set>
+    <set name="A79" desc="家庭情况" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A7905" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">成员姓名</field>
+        <field name="A7910" dataType="代码型" fieldCode="AS" flag="01"  isEdit="true" required="true">与本人关系</field>
+        <field name="A7926" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">电话号码</field>
+        <field name="A7927" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">住址</field>
+    </set>
+    <set name="AD3" desc="紧急联系人" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="CD301" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">紧急联系人姓名</field>
+        <field name="CD302" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">紧急联系人电话</field>
+        <field name="CD303" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">紧急联系人地址</field>
+    </set>
+    <set name="A34" desc="语言能力" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="C3404" dataType="代码型" fieldCode="ZO" flag="01"  isEdit="true" required="true">语种</field>
+        <field name="C35A0" dataType="代码型" fieldCode="YL" flag="01"  isEdit="true" required="true">熟练程度</field>
+        <field name="C3402" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">证书名称</field>
+        <!--<field name="C3403" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">获证日期</field>-->
+    </set>
+    <set name="A10" desc="专业技术职称" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="A1005" dataType="代码型" fieldCode="AJ" flag="01"  isEdit="true" required="true">专业技术资格名称</field>
+        <field name="C1005" dataType="代码型" fieldCode="QC" flag="01"  isEdit="true" required="true">职称等级</field>
+        <field name="A1015" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">取得资格时间</field>
+        <field name="A1010" dataType="代码型" fieldCode="BY" flag="01"  isEdit="true" required="true">取得资格途径 </field>
+    </set>
+    <set name="AZ7" desc="职业资格" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="CZ701" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">职业资格名称</field>
+        <field name="CZ702" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">获得时间</field>
+        <field name="CZ703" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">证书号</field>
+        <field name="CZ704" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">颁发机构</field>
+    </set>
+    <set name="A37" desc="培训经历" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="H3702" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">培训机构</field>
+        <field name="A3715" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">培训开始时间</field>
+        <field name="A3720" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">培训结束时间</field>
+        <field name="A3730" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">培训内容</field>
+        <field name="H3703" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">获得证书</field>
+    </set>
+    <set name="A28" desc="奖励信息" flag="02">
+        <field name="" dataType="字符型" isEdit="false" flag="01" required="true">序号</field>
+        <field name="E2807" dataType="日期型" fieldCode="" flag="01"  isEdit="true" required="true">奖励时间</field>
+        <field name="E2811" dataType="代码型" fieldCode="MI" flag="01"  isEdit="true" required="true">奖励级别</field>
+        <field name="E2803" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">奖励名称</field>
+        <field name="E2805" dataType="代码型" fieldCode="HQ" flag="01"  isEdit="true" required="true">奖励原因</field>
+        <field name="E2809" dataType="字符型" fieldCode="" flag="01"  isEdit="true" required="true">奖励批准单位</field>
+    </set>
+    <!-- 人事set 里面的flag='02' 这里结束 -->
+</sets>

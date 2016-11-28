@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<something-else-entirely>
+
+	<!--<alias>mssql</alias>
+	<driver-url>jdbc:sqlserver://127.0.0.1:1433;databaseName=gdgj</driver-url>
+	<driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+	<driver-properties>
+		<property name="user" value="sa"/>
+		<property name="password" value="123"/>
+    </driver-properties>-->
+
+	<!--<alias>mssql</alias>
+	<driver-url>jdbc:sqlserver://10.10.52.53:1433;databaseName=ykchr</driver-url>
+	<driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+	<driver-properties>
+		<property name="user" value="sa"/>
+		<property name="password" value="ebep#123"/>
+	</driver-properties>-->
+
+	<proxool>
+		<alias>mssql</alias>
+		<driver-url>jdbc:sqlserver://10.10.52.53:1433;databaseName=ykchr</driver-url>
+		<driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+		<driver-properties>
+			<property name="user" value="sa"/>
+			<property name="password" value="ebep#123"/>
+		</driver-properties>
+		<maximum-connection-count>100</maximum-connection-count>
+		<minimum-connection-count>10</minimum-connection-count>
+		<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+		<simultaneous-build-throttle>10</simultaneous-build-throttle>
+		<prototype-count>10</prototype-count>
+	</proxool>
+
+</something-else-entirely>

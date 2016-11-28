@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 把com包目录中标记了@Controller、@Repository、@Service、@Component注解的类注册为bean -->
+    <!--<context:component-scan base-package="com"/>-->
+    <context:component-scan base-package="org.keega.idea"/>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <!-- 设置response返回到浏览器的数据格式为UTF-8 -->
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/>
+            </bean>
+
+            <!-- json输出 -->
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <property name="dateFormat">
+                            <!-- 设置json日期格式 -->
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+    <!-- 设置静态资源 -->
+    <mvc:resources mapping="/css/**" location="/META-INF/resources/css/"
+                   cache-period="31556926"/>
+    <mvc:resources mapping="/images/**" location="/META-INF/resources/images/"
+                   cache-period="31556926"/>
+    <mvc:resources mapping="/js/**" location="/META-INF/resources/js/"
+                   cache-period="31556926"/>
+    <mvc:resources mapping="/upload/**" location="/upload/"
+                   cache-period="31556926"/>
+
+    <mvc:resources mapping="/bootstrap/**" location="/META-INF/resources/bootstrap/"
+                   cache-period="31556926"/>
+    <mvc:resources mapping="/easyui/**" location="/META-INF/resources/easy_ui/"
+                   cache-period="31556926"/>
+
+
+    <mvc:interceptors>
+        <!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+        <!-- 如果不定义 mvc:mapping path 将拦截所有的URL请求 -->
+        <bean class="com.global.interceptor.AuthorityInterceptor"/>
+    </mvc:interceptors>
+
+    <!-- 文件上传配置 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:defaultEncoding="utf-8"/>
+
+    <!-- 全局异常处理 -->
+    <bean class="com.global.interceptor.ExceptionInterceptor"/>
+
+    <!-- 引入数据源配置文件 -->
+    <import resource="datasource.xml"/>
+
+</beans>

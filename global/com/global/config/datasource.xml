@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+        <property name="url" value="proxool.mssql"/>
+    </bean>
+
+    <!-- 将数据源注入到jdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 为dbutil注入数据源，作为dao执行 -->
+    <bean id="queryRunner" class="org.apache.commons.dbutils.QueryRunner">
+        <constructor-arg name="ds" ref="dataSource"/>
+    </bean>
+
+    <!-- 结合mybaits时使用 -->
+    <bean id="sqlFactory" class="com.dexcoder.dal.SimpleSqlFactory"/>
+
+    <!-- 将jdbctemplate以及sqlFactory注入到jdbcDao中 -->
+    <bean id="jdbcDao" class="com.dexcoder.dal.spring.JdbcDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+        <property name="sqlFactory" ref="sqlFactory"/>
+    </bean>
+
+    <!-- 需要分页时声明 -->
+    <bean id="pageControl" class="com.dexcoder.dal.spring.page.PageControl"/>
+
+    <!-- 配置事务管理器 调用实例： 1、@Transactional 2、@Transactional(rollbackFor=Exception.class) -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 配置事务传播特性,注解方式 -->
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+
+    <bean id="dbUtli" class="org.keega.idea.upload.DBUtil">
+        <property name="PASSWORD" value="${PASSWORD}"/>
+        <!-- 这里见鬼了，配置文件明明是sa，但是传过来的却是电脑的名称Think，问题是其他的值都是对的。 -->
+        <property name="username" value="sa"/>
+        <property name="DRIVER_CLASS_NAME" value="${DRIVER_CLASS_NAME}"/>
+        <property name="URL" value="${URL}"/>
+    </bean>
+
+    <context:property-placeholder location="classpath:com/global/config/db.properties"/>
+
+</beans>

@@ -1,0 +1,52 @@
+* {
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+
+body, table {
+    font-size: 12px;
+}
+
+table {
+    empty-cells: show;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td {
+
+    text-align:center;
+}
+
+
+
+
+table.t1 {
+    border: 1px solid #cccccc;
+    color: #000;
+}
+
+table.t1 th {
+    background-color: rgb(244, 247, 247);
+
+}
+
+table.t1 td, table.t1 th {
+    border: 1px solid #ADADAD;
+
+}
+
+table.t1 td {
+    padding: 0;
+}
+
+table.t1 tr.a1 {
+    background-color: #f5fafe;
+}
+
+th.img1{
+    background-image: url('../images/bg.jpg');
+}
+
+

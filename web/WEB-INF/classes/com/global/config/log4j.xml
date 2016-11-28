@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN"
+	"http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd" >
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" threshold="debug" debug="true">
+	<!-- 控制台 -->
+	<appender name="console.CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="error" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p][%d{yyyy-MM-dd HH:mm:ss,SSS}][%c] :%m%n" />
+		</layout>
+	</appender>
+
+	<!-- 系统异常日志 -->
+	<appender name="systemlog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="threshold" value="error" />
+		<param name="file" value="${webapp.root}/logs/system/System.log" />
+		<param name="datePattern" value="'.'yyyy-MM-dd" />
+		<param name="append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS}] :%m%n" />
+		</layout>
+	</appender>
+
+	<!-- 操作日志 -->
+	<appender name="operationLog" class="com.global.log4j.OverrideAppender">
+		<param name="threshold" value="info" />
+		<param name="file" value="${webapp.root}/logs/operation/Operation.log" />
+		<param name="append" value="true" />
+		<param name="datePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS}] :%m%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<!-- 是否输出到控制台 -->
+		<appender-ref ref="console.CONSOLE"/>
+		<!-- 启用系统异常日志 -->
+		<appender-ref ref="systemlog"/>
+		<!-- 启用用户操作日志 -->
+		<appender-ref ref="operationLog"/>
+	</root>
+</log4j:configuration>

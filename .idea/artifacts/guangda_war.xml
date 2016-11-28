@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="guangda:war">
+    <output-path>$PROJECT_DIR$/web/out/artifacts/guangda_Web</output-path>
+    <root id="archive" name="guangda_Web.war">
+      <element id="artifact" artifact-name="guangda:war exploded" />
+    </root>
+  </artifact>
+</component>

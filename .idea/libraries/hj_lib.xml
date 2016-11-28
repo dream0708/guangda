@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="hj-lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../hj-lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../hj-lib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../hj-lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../hj-lib" recursive="false" type="SOURCES" />
+  </library>
+</component>

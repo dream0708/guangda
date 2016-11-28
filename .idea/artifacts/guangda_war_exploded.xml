@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="guangda:war exploded">
+    <output-path>$PROJECT_DIR$/web</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="guangda" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="hj-lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="guangda/web/Web" />
+    </root>
+  </artifact>
+</component>
