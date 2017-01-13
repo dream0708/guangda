@@ -383,7 +383,7 @@ public class TableService implements ITableService {
                     "(select codeitemdesc from organization where codeitemid = ((select E0122 from UsrA01 where A0100 = modifyperson))) as department," +
                     "(select codeitemdesc from organization where codeitemid = ((select E01A1 from UsrA01 where A0100 = modifyperson))) as station " +
                     " from basicinfomodify " +
-                    " where modifystatus = '1'group by modifyperson) a where a.orgid like '"+orgId+"%'";// otherinfomodify
+                    " where modifystatus = '1' group by modifyperson) a where a.orgid like '"+orgId+"%'";// otherinfomodify
             //System.out.println(sql);
             List<Map<String, Object>> mapList = tableDao.queryAllInfo4Approval(sql);
             json = JSON.toJSONString(mapList);

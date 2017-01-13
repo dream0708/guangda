@@ -1,4 +1,4 @@
-package org.keega.idea.xml;
+package com.keega.plat.wechat.util.xml;
 
 import java.io.FileWriter;
 import java.io.IOException;

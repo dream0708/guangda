@@ -30,7 +30,7 @@
                     <td></td>
                     <td style="padding-top:5px;">
                         <a onclick="onLoginClick" class="mini-button" style="width:60px;">确认</a>
-                        <a onclick="onResetClick" class="mini-button" style="width:60px;">重置</a>
+                       <!-- <a onclick="onResetClick" class="mini-button" style="width:60px;">重置</a> -->
                     </td>
                 </tr>
             </table>
